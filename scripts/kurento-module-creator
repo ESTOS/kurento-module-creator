@@ -11,9 +11,9 @@ if [ -z "$MY_PATH" ] ; then
   exit 1  # fail
 fi
 
-if [ "${MY_PATH}" = "/usr/bin" ]
+if [ "${MY_PATH}" = "/usr/local/bin" ]
 then
-  JAVA_JAR="/usr/bin/kurento-module-creator-jar-with-dependencies.jar"
+  JAVA_JAR="/usr/local/bin/kurento-module-creator-jar-with-dependencies.jar"
 else
   echo Not system kurento-module-creator, running from $MY_PATH
   JAVA_JAR=${MY_PATH}/../target/kurento-module-creator-jar-with-dependencies.jar
