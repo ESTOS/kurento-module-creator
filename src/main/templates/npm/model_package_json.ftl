@@ -8,11 +8,10 @@ package.json
   "name": "${node_name}",
   "version": "${module.version}",
   "description": "${api_js.npmDescription}",
-  "main": "lib/index.js",
 <#if bowerGit??>
   "repository": {
     "type": "git",
-    "url": "${bowerGit}"
+    "url": "https://github.com/${bowerGit}.git"
   },
 </#if>
 <#if node_name != "kurento-client-core"
@@ -44,5 +43,6 @@ package.json
     "Kurento",
     "module",
     "plugin"
-  ]
+  ],
+  "main": "lib/index.js"
 }

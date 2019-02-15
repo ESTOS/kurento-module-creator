@@ -121,11 +121,11 @@ public:
     return "${event.name}";
   }
 
-  virtual void Serialize (JsonSerializer &s);
+  <#if !event.extends??>virtual </#if>void Serialize (JsonSerializer &s)<#if event.extends??> override</#if>;
 
 protected:
 
-  ${event.name}() {};
+  ${event.name}() = default;
 
 private:
   <#list event.properties as property>

@@ -1,7 +1,4 @@
-.classpath
-.project
-.settings/
+\.*
 target/
-.freemarker-ide.xml
 *~
 /codegen

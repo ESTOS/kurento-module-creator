@@ -107,7 +107,7 @@ public:
 
   </#if>
   </#list>
-  virtual void Serialize (JsonSerializer &s);
+  <#if !complexType.extends??>virtual </#if>void Serialize (JsonSerializer &s)<#if complexType.extends??> override</#if>;
 
   static void registerType () {
     std::function<RegisterParent*(void)> func =
@@ -127,7 +127,7 @@ public:
 
 protected:
 
-  ${complexType.name}() {};
+  ${complexType.name}() = default;
   </#if>
 
 private:
@@ -172,7 +172,7 @@ private:
   void Serialize (JsonSerializer &s);
 
   <#if createEmptyConstructor >
-  ${complexType.name}() {};
+  ${complexType.name}() = default;
   </#if>
 
 private:
